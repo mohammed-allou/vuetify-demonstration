@@ -1,13 +1,16 @@
 <template>
-  <v-app>
+  <div id="app">
+<v-app>
     <v-spacer></v-spacer>
 
     <v-content>
-      <ToolBar />
-      <Footer/>
+      <tool-bar></tool-bar>
+      <router-view/>
+      <Footer style="position:absolut;z-index:-1"></Footer>
       <HelloWorld />
     </v-content>
   </v-app>
+  </div>
 </template>
 
 <script>
