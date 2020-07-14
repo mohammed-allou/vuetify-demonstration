@@ -1,30 +1,33 @@
 <template>
   <div id="app">
-<v-app>
-    <v-spacer></v-spacer>
+    <v-app>
+        <!-- <tool-bar /> -->
+<Navbar></Navbar>
+      <v-content>
 
-    <v-content>
-      <tool-bar></tool-bar>
-      <router-view/>
-      <Footer style="position:absolut;z-index:-1"></Footer>
-      <HelloWorld />
-    </v-content>
-  </v-app>
+        <router-view ></router-view>
+
+        <HelloWorld />
+        <Footer style="position:absolut"></Footer>
+      </v-content>
+    </v-app>
   </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld";
-import ToolBar from "./components/ToolBar";
+// import ToolBar from "./components/ToolBar";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 export default {
   name: "App",
 
   components: {
     HelloWorld,
-    ToolBar,
-    Footer
+    // ToolBar,
+    Footer,
+    Navbar
   },
 
   data: () => ({
