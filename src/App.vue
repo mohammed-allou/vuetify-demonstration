@@ -1,11 +1,10 @@
 <template>
   <div id="app">
     <v-app>
-        <!-- <tool-bar /> -->
-<Navbar></Navbar>
-      <v-content>
-
-        <router-view ></router-view>
+      <!-- <tool-bar /> -->
+      <Navbar></Navbar>
+      <v-content class="mx-4 mb-4">
+        <router-view></router-view>
 
         <HelloWorld />
         <Footer style="position:absolut"></Footer>

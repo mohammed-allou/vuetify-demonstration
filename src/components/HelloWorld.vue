@@ -6,7 +6,7 @@
       </v-col>
 
       <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">Bienvenu à ma page</h1>
+        <h1 class="display-2 font-weight-bold mb-3 subheading grey--text">Bienvenu à ma page</h1>
       </v-col>
     </v-row>
     <template>
