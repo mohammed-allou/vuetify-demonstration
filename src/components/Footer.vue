@@ -13,7 +13,7 @@
 
       <v-card-text class="py-2 white--text text-center">
         {{ new Date().getFullYear() }} —
-        <strong>Momo</strong>
+        <strong> © MoMo — Tous droits réservés —</strong>
       </v-card-text>
     </v-card>
   </v-footer>
