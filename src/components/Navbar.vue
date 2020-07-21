@@ -7,12 +7,31 @@
         <span class="font-weight-light">todo</span>
         <span>momo</span>
       </v-toolbar-title>
+       <v-btn icon class="hidden-md-and-down">
+                <v-icon>mdi-heart</v-icon>
+              </v-btn>
+              <v-btn icon class="hidden-md-and-down">
+                <v-icon>mdi-bookmark</v-icon>
+              </v-btn>
+              <v-btn icon class="hidden-md-and-down">
+                <v-icon>mdi-share-variant</v-icon>
+              </v-btn>
       <v-spacer></v-spacer>
       <router-link to="/Connexion">
         <v-btn flat>
           <v-icon>power_settings_new</v-icon>
           <span class="hidden-md-and-down">Connexion</span>
         </v-btn>
+        <!-- <div class="text-center">
+    <v-progress-circular
+      :rotate="360"
+      :size="100"
+      :width="15"
+      :value="value"
+      color="teal"
+    >{{value}}
+    </v-progress-circular>
+        </div> -->
       </router-link>
       <router-link to="/Contact">
         <v-btn flat>
@@ -90,9 +109,23 @@ export default {
         { icon: "dashboard", text: "Dashboard", route: "/" },
         { icon: "folder", text: "My Projects", route: "/projects" },
         { icon: "group", text: "partenaire", route: "/partenaire" }
-      ]
-    };
+      ],
+      interval: {},
+        value: 0,
+      }
+    },
+    beforeDestroy () {
+      clearInterval(this.interval)
+    },
+    mounted () {
+      this.interval = setInterval(() => {
+        if (this.value === 100) {
+          return (this.value = 0)
+        }
+        this.value += 10
+      }, 1000)
+    },
   }
-};
+    
 </script> 
 

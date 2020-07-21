@@ -105,7 +105,7 @@
             <div>{{project.date}}</div>
           </v-flex>
           <v-flex xs2 sm4 md2>
-            <div class="caption grey--text">Statut</div>
+            <div id="stat" class="caption grey--text">Statut</div>
             <div>
               <v-chip :class="`ma-2 ${project.statut}` " outlined>{{project.statut}}</v-chip>
             </div>

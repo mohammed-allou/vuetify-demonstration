@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-app>
+    <v-app dark>
       <!-- <tool-bar /> -->
       <Navbar></Navbar>
       <v-content class="mx-4 mb-4">

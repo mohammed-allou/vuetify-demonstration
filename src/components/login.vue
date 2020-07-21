@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-alert type="warning" :value="alert">Attention ! il faut remplir l'email et le mot de passe </v-alert>
+    <v-alert type="warning" :value="alert">Attention ! il faut remplir l'email et le mot de passe</v-alert>
     <v-form @submit.prevent="submit">
       <v-row>
         <v-col cols="12" md="4">
@@ -11,7 +11,8 @@
         </v-col>
         <v-spacer></v-spacer>
 
-        <v-btn class="success" type="submit">submit</v-btn>
+        <v-btn class="success" type="submit" @click="snackbar = true">submit</v-btn>
+        <v-snackbar color="success" v-model="snackbar" :timeout="timeout">{{text}} </v-snackbar>
       </v-row>
     </v-form>
   </v-container>
@@ -30,12 +31,15 @@ export default {
       v => !!v || "E-mail is required",
       v => /.+@.+/.test(v) || "E-mail must be valid"
     ],
-    alert:false
+    alert: false,
+    snackbar: false,
+      text: "bien venu dans votre site, merci d'identifiez",
+      timeout: 2000,
   }),
   methods: {
     submit() {
-      if(!this.email && !this.password){
-        this.alert = true
+      if (!this.email && !this.password) {
+        this.alert = true;
       }
       console.log("salut !!");
       console.log(`Email is: ${this.email} and Password is: ${this.password}`);
